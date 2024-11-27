@@ -6,20 +6,20 @@ The Archiving and Logging Data Lab was aimed to understand archiving, logging, a
 
 ### Skills Learned
 
-- Log size management.
-- Log auditing.
+- Understanding Log size management.
+- Understanding Log auditing.
 - Performing Log filtering.
 - Managing backups using cron jobs.
 - Writing bash scripts to create system resource usage reports.
 
 ### Tools Used
 
-- auditd command
-- logrotate command
-- Journalctl command
-- Cron job command
-- Bash scripts
-- Tar archive command
+- auditd to track event, record the events, detect unauthorized activity, and create reports.
+- logrotate used to contain log size management.
+- Journalctl for log filtering.
+- Cron jobs for managing backups.
+- Bash scripts to create system resource reports.
+- Tar command to archive data
 
 
 ## Steps
