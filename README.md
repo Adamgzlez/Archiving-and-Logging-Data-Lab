@@ -19,7 +19,7 @@ The Archiving and Logging Data Lab was aimed to understand archiving, logging, a
 - Journalctl for log filtering.
 - Cron jobs for managing backups.
 - Bash scripts to create system resource reports.
-- Tar command to archive data
+- Tar command to archive data.
 
 
 ## Steps
