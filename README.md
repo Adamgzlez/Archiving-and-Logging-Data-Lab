@@ -1,4 +1,4 @@
-# Archiving and Logging Data Lab
+# ARCHIVING AND LOGGING DATA
 
 ## Objective
 
