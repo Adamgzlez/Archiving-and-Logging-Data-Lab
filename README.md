@@ -30,3 +30,9 @@ Every screenshot should have some text explaining what the screenshot is about.
 Example below.
 
 *Ref 1: Network Diagram*
+1. Creating, extracting, compressing, and managing tar backup archives
+2. Creating, managing, automating cron jobs
+3. Writing bash scripts
+4. Manage log file sizes
+5. Checking for policy and file vioations
+6. Performing various log filtering techniques
