@@ -54,8 +54,11 @@ Creating a cron job with crontab.guru to schedule the archiving process.
 
 Creating a script to print free memory, disk usage, lists all open files, and file system disk space statistics and stores them in their backup folders.
 
+```
 ~/backups mkdir {freemem,diskuse,openlist,freedisk}
+```
 
+```
 #!/bin/bash
 mkdir -p /home/sysadmin/backups
 
@@ -67,11 +70,16 @@ free -h > /home/sysadmin/backups/freemem/free_mem.txt
 
 df -h > /home/sysadmin/backups/diskuse/disk_usage.txt
 
-
+df > /home/sysadmin/backups/freedisk/free_disk.txt
+```
 
 4. Managing log file sizes
 
 implementing log rotation in order to preserve log entries and keep log files more manageable and compress logs to preserve disk space.
+
+sudo nano /etc/logrotate.conf
+
+
 
 5. Checking for policy and file vioations
 
