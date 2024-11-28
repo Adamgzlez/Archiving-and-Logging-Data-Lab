@@ -29,14 +29,34 @@ The Archiving and Logging Data Lab was aimed to understand archiving, logging, a
 
 Downloading a TarDocs.tar to extract the contents and within I get new subdirectories. Within those I wantt to make a tar archive that excludes a directory from the extracted directory and verify the the contents after.
 
+```
+tar xvf TarDocs.tar
+```
+```
+tar --exclude='Java' -cvvf Javaless_Docs.tar Documents
+```
+```
+tar tvvf Javaless_Docs.tar | grep Java
+```
+```
+sudo tar cvvWf logs_backups.tar.gz --listed-incremental=logs_backup.snar --level=0 emergency /var/log
+```
 
 2. Creating, managing, automating cron jobs
 
 Creating a cron job with crontab.guru to schedule the archiving process.
 
+```
+0 6 * * 3 sudo tar cvzf auth_backup.tgz /var/log/auth.log
+```
+
 3. Writing bash scripts
 
 Creating a script to print free memory, disk usage, lists all open files, and file system disk space statistics and stores them in their backup folders.
+
+~/backups mkdir {freemem,diskuse,openlist,freedisk}
+
+
 
 4. Managing log file sizes
 
