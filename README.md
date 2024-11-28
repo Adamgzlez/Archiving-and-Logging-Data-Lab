@@ -79,7 +79,12 @@ implementing log rotation in order to preserve log entries and keep log files mo
 
 sudo nano /etc/logrotate.conf
 
-
+/var/log/auth.log {
+        rotate 7
+        weekly
+        notifemty
+        delaycompress
+        missingok
 
 5. Checking for policy and file vioations
 
