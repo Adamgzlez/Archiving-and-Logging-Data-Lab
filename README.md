@@ -56,6 +56,17 @@ Creating a script to print free memory, disk usage, lists all open files, and fi
 
 ~/backups mkdir {freemem,diskuse,openlist,freedisk}
 
+#!/bin/bash
+mkdir -p /home/sysadmin/backups
+
+mkdir -p /home/sysadmin/backups/{freemem,diskuse,openlist,freedisk}
+
+lsof > /home/sysadmin/backups/openlist/open_list.txt
+
+free -h > /home/sysadmin/backups/freemem/free_mem.txt
+
+df -h > /home/sysadmin/backups/diskuse/disk_usage.txt
+
 
 
 4. Managing log file sizes
