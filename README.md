@@ -77,18 +77,29 @@ df > /home/sysadmin/backups/freedisk/free_disk.txt
 
 implementing log rotation in order to preserve log entries and keep log files more manageable and compress logs to preserve disk space.
 
+```
 sudo nano /etc/logrotate.conf
+```
 
+```
 /var/log/auth.log {
         rotate 7
         weekly
         notifemty
         delaycompress
         missingok
+}        
+```
 
 5. Checking for policy and file vioations
 
 Creating a event montioring system that generates reports when new accounts are created or modified.
+
+sudo nano /etc/aduit/auditd.conf
+
+max_log_file= 35
+num_logs= 7
+
 
 6. Performing various log filtering techniques
 
