@@ -95,17 +95,75 @@ sudo nano /etc/logrotate.conf
 
 Creating a event montioring system that generates reports when new accounts are created or modified.
 
-sudo nano /etc/aduit/auditd.conf
+5a. Command to open auditd file and set a number of retained logs and max log file size.
 
+```
+sudo nano /etc/aduit/auditd.conf
+```
+
+5b. edits made to the configuration file.
+
+```
 max_log_file= 35
 num_logs= 7
+```
 
+5c. Command using auditd to set rules /etc/shadow /etc/passwd /var/log/auth.log.
 
+```
 sudo nano /etc/audit/rules.d/audit.rules
+```
 
+5d. Edits made to the file.
 
+```
+-w /etc/shadow -p wra -k hashpass_audit
+-w /etc/passwd -p wra -k userpass_audit
+-w /var/log/auth.log -p wra -k authlog_audit
+```
 
+5e. Command to produce a list of the auditd rules to verify.
+
+```
+sudo auditctl -l
+```
+
+5f. Command to produce an auditd report.
+
+```
+sudo aureport -au
+```
+
+5g. Command to use auditd to watch /var/log/cron
+
+```
+-w /var/log/cron -p wra -k cronwatch
+```
 
 6. Performing various log filtering techniques
 
-filtering through log files to determine if there are any threats.   
+filtering through log files to determine if there are any threats.  
+
+6a. Command to return journalctl messages with focus from emergency to error.
+
+```
+sudo journalctl -b -l -p “emerg”..”err”
+```
+
+6b. Command to check disk usage of the system journal since the most recent boot.
+
+```
+sudo journalctl -b -u systemd-journald
+```
+
+6c. Command to filter all log messages with the priority levels between zero and two and saving the output to Priority_High.txt file.
+
+```
+sudo journalctl -p "0..1..2" >> /home/sysadmin/Priority_High.txt
+```
+
+6d. Command to automate the last command into a daily cron job.
+
+```
+0 0 * * * journalctl -p “0..1..2” >> /home/sysadmin/Priority_High.txt
+```
