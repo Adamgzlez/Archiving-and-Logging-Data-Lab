@@ -101,6 +101,11 @@ max_log_file= 35
 num_logs= 7
 
 
+sudo nano /etc/audit/rules.d/audit.rules
+
+
+
+
 6. Performing various log filtering techniques
 
 filtering through log files to determine if there are any threats.   
